@@ -84,19 +84,61 @@ inquirer
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
 function renderLicenseBadge(license) {
-  
+  switch (license){
+    case 'MIT':
+      badge = '[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)';
+      break;
+    case 'ISC':
+      badge = '[![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)';
+      break;
+    case 'The Unlicense':
+      badge = '[![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](http://unlicense.org/)';
+      break;
+    case 'None':
+      badge = '';
+      break;
+  }
+  return badge;
 }
 
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
 function renderLicenseLink(license) {
-
+  switch (license){
+    case 'MIT':
+      licenseLink = 'https://opensource.org/license/mit/';
+      break;
+    case 'ISC':
+      licenseLink = 'https://opensource.org/license/isc-license-txt/';
+      break;
+    case 'The Unlicense':
+      licenseLink = 'https://unlicense.org/';
+      break;
+    case 'None':
+      licenseLink = '';
+      break;
+  }
+  return licenseLink;
 }
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
 function renderLicenseSection(license) {
-
+  switch (license){
+    case 'MIT':
+      licenseSection = mit;
+      break;
+    case 'ISC':
+      licenseSection = isc;
+      break;
+    case 'The Unlicense':
+      licenseSection = unlicense;
+      break;
+    case 'None':
+      licenseSection = ''
+      break;
+  }
+  return licenseSection;
 }
 
 // TODO: Create a function to generate markdown for README
